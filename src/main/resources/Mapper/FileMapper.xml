@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.FileDao">
+    <insert id="insertfile" parameterType="pojo.MyFile">
+        insert into file( userName,filePath)  values  (#{userName},#{filePath})
+    </insert>
+    <delete id="delfile" parameterType="pojo.MyFile">
+        delete from file where userName=#{userName} and filepath=#{filePath}
+    </delete>
+    <update id="updatefile" parameterType="pojo.MyFile">
+        update file set filePath=#{filePath} where userName=#{userName} and filepath=#{srcName}
+    </update>
+</mapper>
